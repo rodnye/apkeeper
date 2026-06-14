@@ -60,7 +60,7 @@ jobs:
           upload_url: ${{ github.event.release.upload_url }}
           files: |
             src-tauri/target/release/bundle/**/*.deb
-            src-tauri/target/release/bundle/**/*.AppImage
+          # src-tauri/target/release/bundle/**/*.AppImage ~~ignored AppImage, very heavy +80MB
             src-tauri/target/release/bundle/**/*.msi
             src-tauri/target/release/bundle/**/*.exe
             src-tauri/target/release/bundle/**/*.dmg
