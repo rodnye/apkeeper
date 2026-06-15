@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { Button } from "$lib/components/ui/button";
+  import { Input } from "$lib/components/ui/input";
   import { invoke } from "@tauri-apps/api/tauri";
 
   let name = $state("");
@@ -10,7 +12,7 @@
   }
 </script>
 
-<main class="mx-0 pt-[10vh] flex flex-col justify-center text-center">
+<main class="pt-[10vh] max-w-lg  mx-auto flex flex-col justify-center text-center">
   <h1 class="text-center">Welcome to Tauri + Svelte</h1>
 
   <div class="flex justify-center">
@@ -27,8 +29,8 @@
   <p class="mt-2">Click on the Tauri, Vite, and SvelteKit logos to learn more.</p>
 
   <form class="flex justify-center mt-4" onsubmit={greet}>
-    <input id="greet-input" placeholder="Enter a name..." bind:value={name} class="rounded-lg border border-transparent px-4 py-2 text-base font-medium text-gray-900 bg-white shadow-md transition duration-200 focus:outline-none mr-2 dark:text-white dark:bg-gray-900/60" />
-    <button type="submit" class="rounded-lg border border-transparent px-4 py-2 text-base font-medium text-gray-900 bg-white shadow-md transition duration-200 cursor-pointer hover:border-blue-600 active:bg-gray-100 focus:outline-none dark:text-white dark:bg-gray-900/60 dark:active:bg-gray-800/40">Greet</button>
+    <Input id="greet-input" placeholder="Enter a name..." bind:value={name} />
+    <Button type="submit">Greet</Button>
   </form>
   <p class="mt-4">{greetMsg}</p>
 </main>
